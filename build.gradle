@@ -1,0 +1,19 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '1.5.2.RELEASE'
+}
+
+sourceCompatibility = '1.8'
+
+repositories {
+	jcenter()
+	maven { url 'https://repo.spring.io/snapshot/' }
+}
+
+ext['spring-integration.version'] = '4.3.9.BUILD-SNAPSHOT'
+
+dependencies {
+	compile 'org.springframework.boot:spring-boot-starter-data-redis'
+	compile 'org.springframework.boot:spring-boot-starter-integration'
+	compile 'org.springframework.integration:spring-integration-redis'
+}
