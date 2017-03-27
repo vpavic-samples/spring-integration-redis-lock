@@ -26,7 +26,7 @@ public class RedisLockApplication {
 
 	@Bean
 	public RedisLockRegistry lockRegistry(RedisConnectionFactory connectionFactory) {
-		return new RedisLockRegistry(connectionFactory, "sample");
+		return new RedisLockRegistry(connectionFactory, "sample", 10000);
 	}
 
 	@Bean
