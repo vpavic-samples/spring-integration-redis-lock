@@ -1,5 +1,11 @@
 # Spring Integration Redis lock - lock expiry issue
 
+**UPDATE**:
+This issue was present in Spring Integration release `4.3.8` and was fixed in `4.3.9`/`5.0.0`.
+See [INT-4178](https://jira.spring.io/browse/INT-4248) and the following PRs: [gh-2114](https://github.com/spring-projects/spring-integration/pull/2114) and [gh-2121](https://github.com/spring-projects/spring-integration/pull/2121).
+
+---
+
 This is a minimal project to demonstrate lock expiry issue using `RedisLockRegistry` based `LockRegistryLeaderInitiator`.
 The registry which obtains the lock does not release it after the expiry in the underlying store which prevents leadership from being revoked and subsequently allows multiple instances becoming leaders. 
 
